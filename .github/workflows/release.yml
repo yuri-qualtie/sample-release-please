@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and Release
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Release please
+        id: release_please
+        uses: GoogleCloudPlatform/release-please-action@v3
+        with:
+          default-branch: main
+          release-type: python
+          package-name: calcs
+      - name: Checkout code
+        if: steps.release_please.outputs.release_created
+        uses: actions/checkout@v2
+      - name: Build
+        if: steps.release_please.outputs.release_created
+        run: python3 calc/generate_data.py
