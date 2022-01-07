@@ -12,7 +12,7 @@ def generate_and_save(filename):
 data_count = 100
 
 for i in range(data_count):
-    filename = txt_dir + '/test' + str(i) + '.txt'
+    filename = txt_dir + '/data' + str(i) + '.txt'
     generate_and_save(filename)
 
 print('Generated ' + str(data_count) + ' files')
