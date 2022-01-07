@@ -27,9 +27,10 @@ jobs:
         if: steps.release_please.outputs.release_created
         run: |
           zip -FSry calcs.zip txt
-      - name: Upload calcs
+      - name: Upload calss
         if: steps.release_please.outputs.release_created
-        uses: actions/upload-artifact@v2
+        uses: AButler/upload-release-assets@v2.0
         with:
-          name: calcs
-          path: calcs.zip
+          files: calcs.zip
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          release-tag: ${{ steps.release_please.outputs.tag_name }}
