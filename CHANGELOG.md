@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/yuri-qualtie/sample-release-please/compare/v1.0.0...v1.0.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* data changes ([1dc275c](https://github.com/yuri-qualtie/sample-release-please/commit/1dc275ca4a9115d7d0b9daad31750ea7f95a069a))
+
 ## [1.0.0](https://github.com/yuri-qualtie/sample-release-please/compare/v0.1.0...v1.0.0) (2022-01-07)
 
 
