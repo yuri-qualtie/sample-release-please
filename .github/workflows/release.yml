@@ -23,3 +23,13 @@ jobs:
       - name: Build
         if: steps.release_please.outputs.release_created
         run: python3 calc/generate_data.py
+      - name: Zip calcs
+        if: steps.release_please.outputs.release_created
+        run: |
+          zip -FSry calcs.zip txt
+      - name: Upload calcs
+        if: steps.release_please.outputs.release_created
+        uses: actions/upload-artifact@v2
+        with:
+          name: calcs
+          path: calcs.zip
